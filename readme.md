@@ -18,6 +18,7 @@ License:            GPLv3 or later
 License URI:        https://www.gnu.org/licenses/gpl.html  
 Tags:               smtp, email, phpmailer, wp_mail, {eac}Doojigger  
 WordPress URI:		https://wordpress.org/plugins/eacsimplesmtp  
+GitHub URI:			https://github.com/EarthAsylum/eacSimpleSMTP  
 </samp></details>
 
 **_Send email using an SMTP email sever. Configure WordPress wp_mail, and phpmailer, to use your SMTP (outgoing) mail server when sending email._**
