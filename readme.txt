@@ -11,8 +11,8 @@ Contributors:       kevinburkholder
 License:            GPLv3 or later
 License URI:        https://www.gnu.org/licenses/gpl.html
 Tags:               smtp, email, phpmailer, wp_mail, {eac}Doojigger
-WordPress URI:		https://wordpress.org/plugins/eacsimplesmtp
-GitHub URI:			https://github.com/EarthAsylum/eacSimpleSMTP
+WordPress URI:      https://wordpress.org/plugins/eacsimplesmtp
+GitHub URI:         https://github.com/EarthAsylum/eacSimpleSMTP
 
 Send email using an SMTP email sever. Configure WordPress wp_mail, and phpmailer, to use your SMTP (outgoing) mail server when sending email.
 
@@ -136,38 +136,38 @@ You should receive a copy of the GNU General Public License along with this prog
 
 = Version 1.0.11 – October 31, 2023 =
 
-+	Prevent direct load of included files.
++   Prevent direct load of included files.
 
 = Version 1.0.10 – June 8, 2023 =
 
-+	Removed unnecessary plugin_update_notice trait.
++   Removed unnecessary plugin_update_notice trait.
 
 = Version 1.0.9 – May 11, 2023 =
 
-+	Changed extension class name (case).
-+	Externalized help, options, and test email (include when needed).
-+	Updated contextual help.
++   Changed extension class name (case).
++   Externalized help, options, and test email (include when needed).
++   Updated contextual help.
 
 = Version 1.0.8 – March 15, 2023 =
 
-+	Set autocomplete attributes to prevent inadvertent auto-fill.
++   Set autocomplete attributes to prevent inadvertent auto-fill.
 
 = Version 1.0.7 – November 15, 2022 =
 
-+	Updated to / Requires {eac}Doojigger 2.0.
-+	Uses 'options_settings_page' action to register options.
-+	Added contextual help using 'options_settings_help' action.
-+	Moved plugin_action_links_ hook to eacDoojigger_load_extensions filter.
++   Updated to / Requires {eac}Doojigger 2.0.
++   Uses 'options_settings_page' action to register options.
++   Added contextual help using 'options_settings_help' action.
++   Moved plugin_action_links_ hook to eacDoojigger_load_extensions filter.
 
 = Version 1.0.6 – September 25, 2022 =
 
-+	Fixed potential PHP notice on load (plugin_action_links_).
++   Fixed potential PHP notice on load (plugin_action_links_).
 +   Added upgrade notice trait for plugins page.
 
 = Version 1.0.5 – August 28, 2022 =
 
-+	Updated to / Requires {eac}Doojigger 1.2
-+	Added 'Settings', 'Docs' and 'Support' links on plugins page.
++   Updated to / Requires {eac}Doojigger 1.2
++   Added 'Settings', 'Docs' and 'Support' links on plugins page.
 
 = Version 1.0.4 – August 2, 2022 =
 

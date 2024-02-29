@@ -1,9 +1,9 @@
-# {eac}Doojigger Simple SMTP Extension for WordPress  
+## {eac}Doojigger Simple SMTP Extension for WordPress  
 [![EarthAsylum Consulting](https://img.shields.io/badge/EarthAsylum-Consulting-0?&labelColor=6e9882&color=707070)](https://earthasylum.com/)
 [![WordPress](https://img.shields.io/badge/WordPress-Plugins-grey?logo=wordpress&labelColor=blue)](https://wordpress.org/plugins/search/EarthAsylum/)
-[![eacDoojigger](https://img.shields.io/badge/Requires-{eac}Doojigger-da821d)](https://eacDoojigger.earthasylum.com/)
+[![eacDoojigger](https://img.shields.io/badge/Requires-%7Beac%7DDoojigger-da821d)](https://eacDoojigger.earthasylum.com/)
 
-<details><summary>Plugin Header</summary><samp>
+<details><summary>Plugin Header</summary>
 
 Plugin URI:         https://eacdoojigger.earthasylum.com/eacsimplesmtp/  
 Author:             [EarthAsylum Consulting](https://www.earthasylum.com)  
@@ -17,13 +17,14 @@ Contributors:       [kevinburkholder](https://profiles.wordpress.org/kevinburkho
 License:            GPLv3 or later  
 License URI:        https://www.gnu.org/licenses/gpl.html  
 Tags:               smtp, email, phpmailer, wp_mail, {eac}Doojigger  
-WordPress URI:		https://wordpress.org/plugins/eacsimplesmtp  
-GitHub URI:			https://github.com/EarthAsylum/eacSimpleSMTP  
-</samp></details>
+WordPress URI:      https://wordpress.org/plugins/eacsimplesmtp  
+GitHub URI:         https://github.com/EarthAsylum/eacSimpleSMTP  
 
-**_Send email using an SMTP email sever. Configure WordPress wp_mail, and phpmailer, to use your SMTP (outgoing) mail server when sending email._**
+</details>
 
-## Description
+> Send email using an SMTP email sever. Configure WordPress wp_mail, and phpmailer, to use your SMTP (outgoing) mail server when sending email.
+
+### Description
 
 _{eac}SimpleSMTP_ is an [{eac}Doojigger](https://eacDoojigger.earthasylum.com/) extension which adds SMTP server configuration for WordPress so that all email sent from your WordPress site will be sent through your SMTP mail server.
 
@@ -88,7 +89,7 @@ simpleSMTP_from_email
     $sendFromEmail = apply_filters( 'simpleSMTP_from_email', get_bloginfo('admin_email') )
 
 
-## Installation
+### Installation
 
 **{eac}Doojigger Simple SMTP Extension** is an extension plugin to and requires installation and registration of [{eac}Doojigger](https://eacDoojigger.earthasylum.com/).
 
@@ -115,13 +116,13 @@ See [Managing Plugins -> Manual Plugin Installation](https://wordpress.org/suppo
 Once installed and activated options for this extension will show in the 'Simple SMTP' tab of {eac}Doojigger settings.
 
 
-## Screenshots
+### Screenshots
 
 1. Simple Smtp
 ![{eac}SimpleSmtp Extension](https://ps.w.org/eacsimplesmtp/assets/screenshot-1.png)
 
 
-## Other Notes
+### Other Notes
 
 #### Additional Information
 
