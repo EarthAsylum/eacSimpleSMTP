@@ -1,8 +1,8 @@
 === {eac}Doojigger Simple SMTP Extension for WordPress ===
 Plugin URI:         https://eacdoojigger.earthasylum.com/eacsimplesmtp/
 Author:             [EarthAsylum Consulting](https://www.earthasylum.com)
-Stable tag:         1.0.11
-Last Updated:       31-Oct-2023
+Stable tag:         1.0.12
+Last Updated:       10-Apr-2024
 Requires at least:  5.5.0
 Tested up to:       6.4
 Requires PHP:       7.2
@@ -123,7 +123,7 @@ Once installed and activated options for this extension will show in the 'Simple
 
 == Copyright ==
 
-= Copyright © 2019-2023, EarthAsylum Consulting, distributed under the terms of the GNU GPL. =
+= Copyright © 2019-2024, EarthAsylum Consulting, distributed under the terms of the GNU GPL. =
 
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 
@@ -133,6 +133,10 @@ You should receive a copy of the GNU General Public License along with this prog
 
 
 == Changelog ==
+
+= Version 1.0.12 – Apr 10, 2024 =
+
++   Added notice if activated without {eac}Doojigger.
 
 = Version 1.0.11 – October 31, 2023 =
 

@@ -7,8 +7,8 @@
 
 Plugin URI:         https://eacdoojigger.earthasylum.com/eacsimplesmtp/  
 Author:             [EarthAsylum Consulting](https://www.earthasylum.com)  
-Stable tag:         1.0.11  
-Last Updated:       31-Oct-2023  
+Stable tag:         1.0.12  
+Last Updated:       10-Apr-2024  
 Requires at least:  5.5.0  
 Tested up to:       6.4  
 Requires PHP:       7.2  
