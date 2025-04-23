@@ -1,12 +1,12 @@
 === {eac}Doojigger Simple SMTP Extension for WordPress ===
 Plugin URI:         https://eacdoojigger.earthasylum.com/eacsimplesmtp/
 Author:             [EarthAsylum Consulting](https://www.earthasylum.com)
-Stable tag:         1.0.12
-Last Updated:       10-Apr-2024
+Stable tag:         1.0.13
+Last Updated:       19-Apr-2025
 Requires at least:  5.8
-Tested up to:       6.6
+Tested up to:       6.8
 Requires PHP:       7.4
-Requires EAC:       2.0
+Requires EAC:       3.0
 Contributors:       kevinburkholder
 License:            GPLv3 or later
 License URI:        https://www.gnu.org/licenses/gpl.html
@@ -123,7 +123,7 @@ Once installed and activated options for this extension will show in the 'Simple
 
 == Copyright ==
 
-= Copyright © 2019-2024, EarthAsylum Consulting, distributed under the terms of the GNU GPL. =
+= Copyright © 2019-2025, EarthAsylum Consulting, distributed under the terms of the GNU GPL. =
 
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 
@@ -133,6 +133,13 @@ You should receive a copy of the GNU General Public License along with this prog
 
 
 == Changelog ==
+
+= Version 1.0.13 – Apr 19, 2025 =
+
++   Compatible with WordPress 6.8.
++   Prevent `_load_textdomain_just_in_time was called incorrectly` notice from WordPress.
+    +   All extensions - via eacDoojigger 3.1.
+    +   Modified extension registration in constructor.
 
 = Version 1.0.12 – Apr 10, 2024 =
 
