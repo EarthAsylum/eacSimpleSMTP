@@ -12,7 +12,7 @@ namespace EarthAsylumConsulting;
  * @wordpress-plugin
  * Plugin Name:			{eac}SimpleSMTP
  * Description:			{eac}SimpleSMTP Configure WordPress wp_mail and phpmailer to use your SMTP server
- * Version:				1.0.13
+ * Version:				1.0.14
  * Requires at least:	5.8
  * Tested up to:		6.8
  * Requires PHP:		7.4

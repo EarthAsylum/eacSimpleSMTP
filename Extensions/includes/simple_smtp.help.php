@@ -5,11 +5,10 @@
  * @category	WordPress Plugin
  * @package		{eac}Doojigger\Extensions
  * @author		Kevin Burkholder <KBurkholder@EarthAsylum.com>
- * @copyright	Copyright (c) 2022 EarthAsylum Consulting <www.EarthAsylum.com>
- * @version		1.x
+ * @copyright	Copyright (c) 2025 EarthAsylum Consulting <www.EarthAsylum.com>
  *
  * included for admin_options_help() method
- * @version 23.1031.1
+ * @version 25.0429.1
  */
 
 defined( 'ABSPATH' ) or exit;
@@ -28,7 +27,7 @@ ob_start();
 <?php
 $content = ob_get_clean();
 
-$this->addPluginHelpTab('Simple SMTP',$content,['Simple SMTP Extension','open']);
+$this->addPluginHelpTab(['Simple SMTP',self::TAB_NAME],$content,['Simple SMTP','open']);
 
 $this->addPluginSidebarLink(
 	"<span class='dashicons dashicons-email'></span>{eac}SimpleSMTP",
