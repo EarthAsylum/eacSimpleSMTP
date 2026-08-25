@@ -14,7 +14,7 @@ namespace EarthAsylumConsulting;
  * Description:			{eac}SimpleSMTP Configure WordPress wp_mail and phpmailer to use your SMTP server
  * Version:				1.0.15
  * Requires at least:	5.8
- * Tested up to:		7.0
+ * Tested up to:		7.1
  * Requires PHP:		7.4
  * Plugin URI:			https://eacdoojigger.earthasylum.com/eacsimplesmtp/
  * Author:				EarthAsylum Consulting
