@@ -8,8 +8,8 @@
 
 Plugin URI:         https://eacdoojigger.earthasylum.com/eacsimplesmtp/  
 Author:             [EarthAsylum Consulting](https://www.earthasylum.com)  
-Stable tag:         1.0.15  
-Last Updated:       23-May-2026  
+Stable tag:         1.1.0  
+Last Updated:       27-Aug-2026  
 Requires at least:  5.8  
 Tested up to:       7.1  
 Requires PHP:       7.4  
@@ -34,47 +34,71 @@ _{eac}SimpleSMTP_ is an [{eac}Doojigger](https://eacDoojigger.earthasylum.com/) 
 
 {eac}SimpleSMTP options include...
 
-+   _SMTP Server Name_
+__SMTP Server Settings__
+
++	_Server Name_
 
     The outgoing mail server name. Typically something like smtp.your_email_domain.com.
 
-+   _SMTP Port_
++	_Port Number_
 
-    The mail server port to use. Typically, port 25 = no encryption, port 465 = SSL encryption, port 587 = TLS encryption.
+    The mail server port to use. Typically, port 25 = no encryption, port 465 = SSL encryption, port 587 = TLS encryption. Port 2587 is often used as an alternative to port 587.
 
-+   _SMTP Encryption_
++	_Encryption_
 
     Does your mail server use encryption?
 
-+   _SMTP User Name_
+__SMTP Authentication__
+
++	_User Name_
 
     The email address/username used to authenticate with your mail server.
 
-+   _SMTP Password_
++	_Password_
 
     The password used to authenticate with your mail server.
 
-+   _Send From Name_
+__SMTP Sender__
+
++	_Send From Name_
 
     The default name used when sending email.
 
-+   _Send From Email_
++	_Send From Email_
 
     The default email address used when sending email.
 
-+   _Override Senders_
++	_Override Senders_
 
     Always send from above name/address (overriding other scripts).
 
-+   SMTP Debugging
+__Rate Limit__
 
-    Enable capture and logging of wp_mail and phpMailer debugging data.
++	_Limit Emails Sent_
 
-+   _Default Headers_
+	When setting rate limits, this is the number of emails that can be sent in a given number of minutes.
+
++	_Limit per Minutes_
+
+	When setting rate limits, this is the number of minutes to limit emails.
+
+__Optional Headers__
+
++	_Default Headers_
 
     Add custom headers to all outgoing emails.
 
-+   _Send a Test_
+__Logging & Debugging__
+
++	_Log Sent Emails_
+
+	Logs emails to the system error log.
+
++	SMTP Debugging
+
+    Enable capture and logging of wp_mail and phpMailer debugging data.
+
++	_Send a Test_
 
     Send a test email to ensure your configuration is working.
 
@@ -128,7 +152,7 @@ Once installed and activated options for this extension will show in the 'Simple
 
 #### Additional Information
 
-+   {eac}SimpleSMTP is an extension plugin to and requires installation and registration of [{eac}Doojigger](https://eacDoojigger.earthasylum.com/).
++	{eac}SimpleSMTP is an extension plugin to and requires installation and registration of [{eac}Doojigger](https://eacDoojigger.earthasylum.com/).
 
 
 ### Copyright

@@ -9,9 +9,7 @@ if (! class_exists(__NAMESPACE__.'\Simple_SMTP_extension', false) )
 	 * @category	WordPress Plugin
 	 * @package		{eac}Doojigger\Extensions
 	 * @author		Kevin Burkholder <KBurkholder@EarthAsylum.com>
-	 * @copyright	Copyright (c) 2025 EarthAsylum Consulting <www.EarthAsylum.com>
-	 * @link		https://eacDoojigger.earthasylum.com/
-	 * @see			https://eacDoojigger.earthasylum.com/phpdoc/
+	 * @copyright	Copyright (c) 2026 EarthAsylum Consulting <www.EarthAsylum.com>
 	 */
 
 	class Simple_SMTP_extension extends \EarthAsylumConsulting\abstract_extension
@@ -19,7 +17,7 @@ if (! class_exists(__NAMESPACE__.'\Simple_SMTP_extension', false) )
 		/**
 		 * @var string extension version
 		 */
-		const VERSION		= '25.0429.1';
+		const VERSION		= '26.0827.1';
 
 		/**
 		 * @var string to set default tab name
@@ -133,6 +131,16 @@ if (! class_exists(__NAMESPACE__.'\Simple_SMTP_extension', false) )
 				}
 			);
 
+			if ($this->is_option('smtp_log_sent'))
+			{
+				\add_action( 'wp_mail_succeeded', 	array( $this, 'log_email_sent' ) );
+				\add_action( 'wp_mail_failed', 		array( $this, 'log_email_failed' ) );
+			}
+
+			if ($this->is_option('smtp_limit_count') && $this->is_option('smtp_limit_time'))
+			{
+				\add_filter( 'pre_wp_mail', 		array( $this, 'check_email_limit'), 10, 2 );
+			}
 		}
 
 
@@ -194,8 +202,7 @@ if (! class_exists(__NAMESPACE__.'\Simple_SMTP_extension', false) )
 		/**
 		 * wp_mail custom headers
 		 *
-		 * @param string|array	$args - wp_mail args
-		 * @param string		$headers - smtp_headers
+		 * @param array	$args - wp_mail args
 		 * @return	void
 		 */
 		public function wp_mail_headers($args)
@@ -223,6 +230,88 @@ if (! class_exists(__NAMESPACE__.'\Simple_SMTP_extension', false) )
 
 
 		/**
+		 * on wp_mail_succeeded action when logging emails sent
+		 *
+		 * @param array	$args - wp_mail args
+		 * @return	void
+		 */
+		public function log_email_sent(array $mail_data)
+		{
+			$this->log_email_write($mail_data,'sent');
+		}
+
+
+		/**
+		 * on wp_mail_failed action when logging emails sent
+		 *
+		 * @param object	$wperror - wp_mail error
+		 * @return	void
+		 */
+		public function log_email_failed($wperror)
+		{
+			$mail_data = $wperror->get_error_data();
+			$this->log_email_write($mail_data,'failed');
+		}
+
+
+		/**
+		 * log sent emails
+		 *
+		 * @param array	$args - wp_mail args
+		 * @return	void
+		 */
+		public function log_email_write(array $args, string $status)
+		{
+			if (is_array($args['to'])) {
+				$args['to'] = implode(', ',$args['to']);
+			}
+			if (!empty($args['attachments']) && is_string($args['attachments'])) {
+				$args['attachments'] = explode(',',$args['attachments']);
+			}
+			$message = sprintf("SMTP Email %s - To: [%s], Subject: [%s], Attached: %d",
+				ucwords($status),
+				$args['to'] ?: 'unset',
+				$args['subject'] ?: 'unset',
+				(!empty($args['attachments']) ? count($args['attachments']) : 0),
+			);
+			$this->plugin->logNotice($message);
+			error_log( $message . sprintf(", 'IP: %s, URI: %s ",
+				$this->plugin->getVisitorIP(),
+				$this->plugin->varServer('request_uri'),
+			));
+		}
+
+
+		/**
+		 * on pre_wp_mail action when limiting emails sent
+		 *
+		 * @param bool|null	$value non-null prevents send
+		 * @param array	$args - wp_mail args
+		 * @return	void
+		 */
+		public function check_email_limit($value, array $mail_data)
+		{
+			$limit 	= intval($this->get_option('smtp_limit_count',0));
+			$time 	= MINUTE_IN_SECONDS * intval($this->get_option('smtp_limit_time',1));
+			$trans 	= $this->plugin->get_transient('smtp_rate_limit', function($id) use($time)
+				{
+					return [0,$time];
+				}, $time
+			);
+			$count 	= ++$trans[0];
+			$this->plugin->set_transient('smtp_rate_limit',$trans,$trans[1]);
+			if ($limit && $count <= $limit) {
+				return $value;
+			}
+			if ($this->is_option('smtp_log_sent')) {
+				$this->log_email_write($mail_data,'blocked');
+			}
+			$this->do_action('register_risk','smtp rate limit exceeded');
+			return false;
+		}
+
+
+		/**
 		 * filter for options_form_post_ _smtp_testemail
 		 *
 		 * @param string	$email - the value POSTed
@@ -239,13 +328,15 @@ if (! class_exists(__NAMESPACE__.'\Simple_SMTP_extension', false) )
 			}
 
 			$content = require 'includes/simple_smtp.email.php';
+			$fromName 	= $this->get_option('smtp_fromname') ?: \get_option('blogname');
+			$fromEmail 	= $this->get_option('smtp_fromemail') ?: \get_option('admin_email');
 
 			$result = wp_mail(
 				$testEmail,
 				\get_option('blogname')." SMTP Email Test",
 				$content,
 				[
-					"from: ".$this->get_option('smtp_fromname').' <'.$this->get_option('smtp_fromemail').'>',
+					"from: ".$fromName.' <'.$fromEmail.'>',
 					"Content-type: text/html"
 				]
 			);

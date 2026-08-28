@@ -8,11 +8,14 @@ namespace EarthAsylumConsulting;
  * @package		{eac}SimpleSMTP\{eac}Doojigger Extensions
  * @author		Kevin Burkholder <KBurkholder@EarthAsylum.com>
  * @copyright	Copyright (c) 2026 EarthAsylum Consulting <www.earthasylum.com>
+ * @link		https://eacdoojigger.earthasylum.com/eacsimplesmtp/
+ * @link 		https://wordpress.org/plugins/eacsimplesmtp
+ * @link 		https://github.com/EarthAsylum/eacSimpleSMTP
  *
  * @wordpress-plugin
  * Plugin Name:			{eac}SimpleSMTP
  * Description:			{eac}SimpleSMTP Configure WordPress wp_mail and phpmailer to use your SMTP server
- * Version:				1.0.15
+ * Version:				1.1.0
  * Requires at least:	5.8
  * Tested up to:		7.1
  * Requires PHP:		7.4
@@ -25,7 +28,7 @@ namespace EarthAsylumConsulting;
 
 if (!defined('EACDOOJIGGER_VERSION'))
 {
-	\add_action( 'all_admin_notices', function()
+	\add_action( 'admin_notices', function()
 		{
 			echo '<div class="notice notice-error is-dismissible"><p>{eac}SimpleSMTP requires installation & activation of '.
 				 '<a href="https://eacdoojigger.earthasylum.com/eacdoojigger" target="_blank">{eac}Doojigger</a>.</p></div>';
